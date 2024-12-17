@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Registrar y Descargar Citas con archivo PDF</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h2>Registrar y Descargar Citas con archivo PDF</h2>
+    <form action="/subir-citas-pdf" method="POST" enctype="multipart/form-data">
+        <input type="file" name="archivoPDF" accept=".pdf" />
+        <button type="submit">Subir Archivo</button>
+      </form>
+      <button onclick="window.location.href='/descargar-citas-pdf'">Descargar Citas</button>
+      <button onclick="window.location.href='/'">Volver</button>
+</body>
+</html>

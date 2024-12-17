@@ -1,0 +1,143 @@
+/* Estilo general del cuerpo */
+body {
+  font-family: Arial, sans-serif; /* Fuente más moderna */
+  background-color: #f2f2f2; /* Fondo gris claro */
+  color: #333; /* Texto oscuro */
+  margin: 0;
+  padding: 0;
+}
+
+/* Título principal */
+h1 {
+  color: #444;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2.5em;
+}
+
+h2 {
+  color: #444;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 2.0em;
+}
+
+/* Contenedor principal del formulario */
+form {
+  width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  text-align: center;
+}
+
+/* Etiquetas del formulario */
+label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #555; /* Gris oscuro */
+}
+
+/* Campos de entrada */
+input[type="file"] {
+  width: 90%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+input[type="file"]:focus {
+  outline: none;
+  border-color: #007BFF; /* Azul al enfocar */
+}
+
+/* Botones */
+button {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #007BFF; /* Azul */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #0056b3; /* Azul más oscuro */
+  transform: scale(1.05); /* Efecto de escala al pasar el mouse */
+}
+
+.descargar {
+  background-color: #28a745; /* Verde */
+}
+
+.descargar:hover {
+  background-color: #218838;
+}
+
+/* Estilo para tablas */
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #007BFF; /* Azul */
+  color: white;
+  text-transform: uppercase;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Barra de navegación */
+nav {
+  background-color: #333;
+  color: white;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  padding: 8px 15px;
+  transition: background-color 0.3s ease, border-radius 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #007BFF;
+  border-radius: 5px;
+}
+

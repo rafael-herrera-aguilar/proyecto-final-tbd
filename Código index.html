@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+
+  <title>Gestión de Citas Médicas</title>
+</head>
+<body>
+  <h1>Bienvenido a la Gestión de Citas Médicas</h1>
+  <p>Esta es una página básica para administrar las citas médicas de los doctores.</p>
+
+    <!-- Incluir barra de navegación desde navbar.html -->
+    <div id="navbar"></div>
+
+  <script>
+  // Insertar el contenido de navbar.html en el elemento con id "navbar"
+  fetch('/navbar.html')
+              .then(response => response.text())
+              .then(data => {
+                  document.getElementById('navbar').innerHTML = data;
+              })
+              .catch(error => console.error('Error cargando el navbar:', error));
+
+    // Solicitar el tipo de usuario y ajustar el menú en función de este
+  fetch('/tipo-usuario')
+        .then(response => response.json())
+        .then(data => {
+            const menu = document.getElementById('menu');
+            const tipoUsuario = data.tipo_usuario;
+            // Agregar opciones de menú según el tipo de usuario
+            if (tipoUsuario === 'admin') {
+                menu.innerHTML += '<li><a href="/citas">Ver Citas</a></li>';
+                menu.innerHTML += '<li><a href="/ver-usuarios">Ver Usuarios</a></li>';
+                menu.innerHTML += '<li><a href="/registrar-citas-excel.html">Registrar y Descargar Citas con archivo Excel</a></li>';
+                menu.innerHTML += '<li><a href="/registrar-citas-pdf.html">Registrar y Descargar Citas con archivo PDF</a></li>';
+                menu.innerHTML += '<li><a href="/ver-medicos">Ver Doctores</a></li>';
+            } else if (tipoUsuario === 'medico') {
+                menu.innerHTML += '<li><a href="/ver-mis-citas">Ver mis Citas</a></li>';
+                menu.innerHTML += '<li><a href="/ver-mi-cita-proxima">Ver mi próxima Cita</a></li>';
+                menu.innerHTML += '<li><a href="/editar-mis-citas.html">Editar mis Citas</a></li>';
+                menu.innerHTML += '<li><a href="/eliminar-mis-citas.html">Eliminar mis Citas</a></li>';
+                menu.innerHTML += '<li><a href="/edadpromedio-mis-pacientes">Edad Promedio de mis Pacientes</a></li>';
+            }
+
+            // Opción de cerrar sesión para todos los tipos de usuario
+            menu.innerHTML += '<li><a href="/logout">Cerrar Sesión</a></li>';
+        })
+        .catch(error => console.error('Error obteniendo el tipo de usuario:', error));
+</script>
+  <br> 
+  <h2>Registrar Citas</h2>
+  <form action="/registrar-citas" method="POST">
+
+    <label for="paciente">Nombre del paciente:</label>
+    <input type="text" id="paciente" name="paciente">
+    
+    <label for="edad_paciente">Edad:</label>
+    <input type="number" id="edad_paciente" name="edad_paciente">
+  
+    <label for="fecha_hora">Fecha y hora de la cita:</label>
+    <input type="datetime-local" id="fecha_hora" name="fecha_hora">
+
+    <label for="doctor">Doctor:</label>
+    <input type="text" id="doctor" name="doctor">
+
+    <label for="especialidad">Especialidad:</label>
+    <input type="text" id="especialidad" name="especialidad">
+
+    <label for="id_doctor">ID del doctor:</label>
+    <input type="number" id="id_doctor" name="id_doctor">
+
+    <button type="submit">Guardar</button>
+  </form>
+  <br>
+
+  <h2>Gracias por usar la Gestión de Citas Médicas</h2>
+</body>
+</html>
+
+
+
+
+  
